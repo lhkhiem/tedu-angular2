@@ -27,7 +27,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "./node_modules/font-awesome/css/font-awesome.css",
+              "./node_modules/nprogress/nprogress.css",
+              "./node_modules/animate.css/animate.css",
+              "./src/assets/css/custom.css"
             ],
             "scripts": []
           },
@@ -95,6 +99,7 @@
             ],
             "styles": [
               "src/styles.css"
+              
             ],
             "scripts": []
           }
