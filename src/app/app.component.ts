@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef  } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +8,6 @@ import { Component, AfterViewInit, ElementRef  } from '@angular/core';
   ],
   
 })
-export class AppComponent implements AfterViewInit {
-  constructor(private elementRef: ElementRef) {
-
-  }
-  ngAfterViewInit() {
-    var s = document.createElement("script");
-    s.type = "text/javascript";
-    s.src = "../assets/js/demo.js";
-    this.elementRef.nativeElement.appendChild(s);
-  }
+export class AppComponent {
+  
 }

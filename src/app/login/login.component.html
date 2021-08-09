@@ -1,0 +1,71 @@
+<div class="hold-transition login-page">
+<div class="login-box">
+    <!-- /.login-logo -->
+    <div class="card card-outline card-primary">
+      <div class="card-header text-center">
+        <a href="" class="h1"><b>Admin</b>LTE</a>
+        <p *ngIf="data.error!=null">{{data.error}}</p>
+        <p *ngIf="data.error==null">Xin chao: {{data.firstName}}</p>
+      </div>
+      <div class="card-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+  
+        <form name="formLogin" #f="ngForm" (ngSubmit)="f.form.valid && login(f)" novalidate>
+          <div class="input-group mb-3" [ngClass]="{'has-error':f.submitted && !username.valid}">
+            <input type="text" class="form-control" name="username" placeholder="username" [(ngModel)]="model.username" #username="ngModel" required>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="f.submitted && !username.valid" class="help-block">Ten dang nhap yeu cau</div>
+
+          <div class="input-group mb-3" [ngClass]="{'has-error':f.submitted && !password.valid}">
+            <input type="password" class="form-control" placeholder="Password" minlength="6" name="password" [(ngModel)]="model.password" #password="ngModel" required>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="f.submitted && !password.valid" class="help-block">Ten dang nhap yeu cau</div>
+          <div *ngIf="password.errors?.minlength" class="help-block">Mat khau it nhat 6 ki tu</div>
+          <div class="row">
+            <div class="col-8">
+              <div class="icheck-primary">
+                <input type="checkbox" id="remember">
+                <label for="remember">
+                  Remember Me
+                </label>
+              </div>
+            </div>
+            <!-- /.col -->
+            <div class="col-4">
+              <button [disabled]="!f.form.valid" type="submit" class="btn btn-primary btn-block">Sign In</button>
+            </div>
+            <!-- /.col -->
+          </div>
+        </form>
+        <div class="social-auth-links text-center mt-2 mb-3">
+          <a href="#" class="btn btn-block btn-primary">
+            <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+          </a>
+          <a href="#" class="btn btn-block btn-danger">
+            <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+          </a>
+        </div>
+        <!-- /.social-auth-links -->
+  
+        <p class="mb-1">
+          <a href="forgot-password.html">I forgot my password</a>
+        </p>
+        <p class="mb-0">
+          <a href="register.html" class="text-center">Register a new membership</a>
+        </p>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </div>
+</div>
