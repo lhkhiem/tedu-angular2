@@ -4,8 +4,7 @@
     <div class="card card-outline card-primary">
       <div class="card-header text-center">
         <a href="" class="h1"><b>Admin</b>LTE</a>
-        <p *ngIf="data.error!=null">{{data.error}}</p>
-        <p *ngIf="data.error==null">Xin chao: {{data.firstName}}</p>
+        <p *ngIf="user.error!=null">{{user.error}}</p>
       </div>
       <div class="card-body">
         <p class="login-box-msg">Sign in to start your session</p>

@@ -1,4 +1,6 @@
 import { Component, OnInit, AfterViewInit, ElementRef  } from '@angular/core';
+import { SystemConstants } from '../core/common/system.constants';
+import { UtilityService } from '../core/services/utility.service';
 
 @Component({
   selector: 'app-main',
@@ -6,7 +8,7 @@ import { Component, OnInit, AfterViewInit, ElementRef  } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit,AfterViewInit {
-  constructor(private elementRef: ElementRef) {
+  constructor(private elementRef: ElementRef, private utilityService:UtilityService) {
 
   }
   ngAfterViewInit() {
@@ -18,5 +20,8 @@ export class MainComponent implements OnInit,AfterViewInit {
 
   ngOnInit(): void {
   }
-
+logout(){
+  localStorage.removeItem(SystemConstants.CURRENT_USER);
+  this.utilityService.navigateToLogin();
+}
 }

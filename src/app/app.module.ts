@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { MainModule } from './main/main.module';
 import { FormsModule } from '@angular/forms';
-
+import { AuthGuard } from './core/guards/auth.guard';
 
 
 @NgModule({
@@ -23,7 +23,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
